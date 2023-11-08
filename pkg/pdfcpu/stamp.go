@@ -607,15 +607,19 @@ func createPDFRes(ctx, otherCtx *model.Context, pageNr int, migrated map[int]int
 	pdfRes := model.PdfResources{}
 	xRefTable := ctx.XRefTable
 	otherXRefTable := otherCtx.XRefTable
+	otherPageNr := pageNr - wm.SkipPages
+	if otherPageNr <= 0 {
+		otherPageNr = 1
+	}
 
 	// Locate page dict & resource dict of PDF stamp.
 	consolidateRes := true
-	d, _, inhPAttrs, err := otherXRefTable.PageDict(pageNr, consolidateRes)
+	d, _, inhPAttrs, err := otherXRefTable.PageDict(otherPageNr, consolidateRes)
 	if err != nil {
 		return err
 	}
 	if d == nil {
-		return errors.Errorf("pdfcpu: unknown page number: %d\n", pageNr)
+		return errors.Errorf("pdfcpu: unknown page number: %d\n", otherPageNr)
 	}
 
 	// Retrieve content stream bytes of page dict.
@@ -646,7 +650,15 @@ func createPDFRes(ctx, otherCtx *model.Context, pageNr int, migrated map[int]int
 
 func createPDFResForWM(ctx *model.Context, wm *model.Watermark) error {
 	// Note: The stamp pdf is assumed to be valid!
-	otherCtx, err := ReadFile(wm.FileName, model.NewDefaultConfiguration())
+	var otherCtx *model.Context
+	var err error
+
+	if wm.PDF != nil {
+		otherCtx, err = Read(wm.PDF, model.NewDefaultConfiguration())
+	} else {
+		otherCtx, err = ReadFile(wm.FileName, model.NewDefaultConfiguration())
+	}
+
 	if err != nil {
 		return err
 	}
@@ -662,8 +674,8 @@ func createPDFResForWM(ctx *model.Context, wm *model.Watermark) error {
 			return err
 		}
 	} else {
-		j := otherCtx.PageCount
-		if ctx.PageCount < otherCtx.PageCount {
+		j := otherCtx.PageCount + wm.SkipPages
+		if ctx.PageCount < j {
 			j = ctx.PageCount
 		}
 		for i := 1; i <= j; i++ {

@@ -62,8 +62,10 @@ type Watermark struct {
 	TextLines         []string            // display multiple lines of text.
 	URL               string              // overlay link annotation for stamps.
 	FileName          string              // display pdf page or png image.
+	PDF               io.ReadSeeker       // reader for PDF watermark.
 	Image             io.Reader           // reader for image watermark.
 	Page              int                 // the page number of a PDF file. 0 means multistamp/multiwatermark.
+	SkipPages         int                 // number of pages in destination PDF to skip before starting multistamp/multiwatermark.
 	OnTop             bool                // if true this is a STAMP else this is a WATERMARK.
 	InpUnit           types.DisplayUnit   // input display unit.
 	Pos               types.Anchor        // position anchor, one of tl,tc,tr,l,c,r,bl,bc,br.
