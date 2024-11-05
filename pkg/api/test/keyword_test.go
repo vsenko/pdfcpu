@@ -21,9 +21,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/pdfcpu/pdfcpu/pkg/api"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
+	"github.com/vsenko/pdfcpu/pkg/api"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/model"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/types"
 )
 
 func listKeywordsFile(t *testing.T, fileName string, conf *model.Configuration) ([]string, error) {

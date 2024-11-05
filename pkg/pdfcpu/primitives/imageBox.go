@@ -27,13 +27,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/color"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/draw"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/matrix"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/log"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/color"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/draw"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/matrix"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/model"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/types"
 )
 
 // ImageData represents a more direct way for providing image data for form filling scenarios.

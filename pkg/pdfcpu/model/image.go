@@ -29,9 +29,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/pdfcpu/pdfcpu/pkg/filter"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/filter"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/types"
 	_ "golang.org/x/image/webp"
 )
 

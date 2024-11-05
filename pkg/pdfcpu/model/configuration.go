@@ -23,9 +23,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/pdfcpu/pdfcpu/pkg/font"
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
+	"github.com/vsenko/pdfcpu/pkg/font"
+	"github.com/vsenko/pdfcpu/pkg/log"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/types"
 )
 
 const (

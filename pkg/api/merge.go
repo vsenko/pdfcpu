@@ -22,10 +22,10 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/log"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/model"
 )
 
 // appendTo appends rs to ctxDest's page tree.

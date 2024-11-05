@@ -23,9 +23,9 @@ import (
 	"sort"
 	"time"
 
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/log"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/types"
 )
 
 // Attachment is a Reader representing a PDF attachment.

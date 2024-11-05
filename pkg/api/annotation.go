@@ -20,9 +20,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/model"
 )
 
 // Annotations returns page annotations of rs for selected pages.

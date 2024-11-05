@@ -20,9 +20,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/model"
 )
 
 // Rotate rotates selected pages of rs clockwise by rotation degrees and writes the result to w.

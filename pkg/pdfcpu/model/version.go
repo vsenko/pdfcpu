@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/pdfcpu/pdfcpu/pkg/log"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/log"
 )
 
 // VersionStr is the current pdfcpu version.

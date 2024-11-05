@@ -21,7 +21,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/pdfcpu/pdfcpu/pkg/cli"
+	"github.com/vsenko/pdfcpu/pkg/cli"
 )
 
 func TestViewerPreferences(t *testing.T) {

@@ -20,8 +20,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/types"
 )
 
 func processDictRefCounts(xRefTable *XRefTable, d types.Dict) {

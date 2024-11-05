@@ -20,8 +20,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
 	"github.com/pkg/errors"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/model"
 )
 
 // Permissions returns user access permissions for rs.

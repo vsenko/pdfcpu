@@ -21,7 +21,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
+	"github.com/vsenko/pdfcpu/pkg/pdfcpu/types"
 )
 
 // FontObject represents a font used in a PDF file.
