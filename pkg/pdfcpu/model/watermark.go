@@ -242,14 +242,18 @@ func (wm *Watermark) CalcBoundingBox(pageNr int) {
 	bb := types.RectForDim(float64(wm.Width), float64(wm.Height))
 
 	if wm.IsPDF() {
-		wm.bbPDF = wm.PdfRes[wm.PdfPageNrSrc].Bb
-		if wm.MultiStamp() {
-			i := wm.PdfResIndex(pageNr)
-			wm.bbPDF = wm.PdfRes[i].Bb
+		if res, ok := wm.PdfRes[wm.PdfPageNrSrc]; ok {
+			if res.Bb != nil {
+				wm.bbPDF = wm.PdfRes[wm.PdfPageNrSrc].Bb
+				if wm.MultiStamp() {
+					i := wm.PdfResIndex(pageNr)
+					wm.bbPDF = wm.PdfRes[i].Bb
+				}
+				wm.Width = int(wm.bbPDF.Width())
+				wm.Height = int(wm.bbPDF.Height())
+				bb = wm.bbPDF.CroppedCopy(0)
+			}
 		}
-		wm.Width = int(wm.bbPDF.Width())
-		wm.Height = int(wm.bbPDF.Height())
-		bb = wm.bbPDF.CroppedCopy(0)
 	}
 
 	ar := bb.AspectRatio()
